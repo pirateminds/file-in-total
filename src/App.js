@@ -64,7 +64,8 @@ class App extends Component {
         console.log(files);
 
         clearInterval(this.intervalHander);
-        let mesure = mesureTime();
+        const initialPerformance = performance.now();
+        let mesure = mesureTime(initialPerformance);
         this.intervalHander = setInterval(()=> {
             const timestamp = mesure();
             this.setState({
@@ -75,7 +76,7 @@ class App extends Component {
                 time: timestamp,
             });
 
-            mesure = mesureTime(timestamp);
+            mesure = mesureTime(initialPerformance);
         }, 100);
 
         scanDataTransferItemList(files, FolderDTO).then(result => {
