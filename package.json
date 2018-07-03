@@ -1,12 +1,16 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "file-in-total",
+  "version": "0.0.1",
+  "description": "The demo app to test all possible file upload scenarios",
   "private": true,
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
   },
+  "author": "pirateminds.com",
+  "icon": "icon",
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
