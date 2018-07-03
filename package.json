@@ -4,8 +4,10 @@
   "description": "The demo app to test all possible file upload scenarios",
   "private": true,
   "dependencies": {
+    "numeral": "^2.0.6",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-radio-group": "^3.0.3",
     "react-scripts": "1.1.4"
   },
   "author": "pirateminds.com",

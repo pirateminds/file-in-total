@@ -27,13 +27,18 @@ const filterFiles = (obj, folderDTO) => {
     for (let o in obj) {
         o = obj[o];
         let name = o.relativePath || o.webkitRelativePath || o.name;
-        if (name) {
+        let metadata = {
+            size: o.size,
+            modificationTime: o.lastModifiedDate,
+        };
+
+        if (name && filterFile(o, metadata)) {
             // tslint:disable-next-line:no-null-keyword
-            items.push(addItem(o, null, folderDTO));
+            items.push(addItem(o, metadata, folderDTO));
         }
     }
 
-    return items.filter((i) => i.item.size);
+    return items.filter((i) => filterFile(i, i.metadata));
 }
 
 const filterFile = (entry, metadata) =>
@@ -102,12 +107,6 @@ const scanEntriesSync = (entries, folderDTO, endCb) => {
 
     scanNextFolder(scanned);
 }
-
-const getPath = (_fileName, ingestion, dirPath = "") => 'something/path'//this.path || `/${ingestion.type[0]}/${ingestion.name}/${moment().format("YYYY/MM/DD")}${dirPath}`;
-
-const getName = (_file, saltedName, _isXLS) => saltedName;
-
-const getType = (file) => file.type;
 
 /**
  * Scanning using e.target && e.target.files

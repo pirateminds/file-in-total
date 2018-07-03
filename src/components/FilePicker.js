@@ -5,6 +5,7 @@ export class FilePicker extends React.Component {
     static propTypes = {
         onFileList: PropTypes.func.isRequired,
         onDataTransferItemList: PropTypes.func.isRequired,
+        multiple: PropTypes.bool,
     }
 
     onChange = (e) => {
@@ -22,12 +23,31 @@ export class FilePicker extends React.Component {
     }
 
     render() {
-        const { className, id } = this.props;
+        const { className, id, multiple, onFileList, onDataTransferItemList, ...rest } = this.props;
         const filtredProps = {
             className,
-            id
+            id,
+            ...rest,
         }
-        return <input {...filtredProps} type="file" name="files[]" onChange={this.onChange} onDrop={this.onDrop}
-                multiple webkitdirectory mozdirectory odirectory msdirectory directory />
+        return multiple ? <input
+            {...filtredProps}
+            type="file"
+            name="files[]"
+            onChange={this.onChange}
+            onDrop={this.onDrop}
+
+            multiple={'true'}
+            webkitdirectory={'true'}
+            mozdirectory={'true'}
+            odirectory={'true'}
+            msdirectory={'true'}
+            directory={'true'}
+        />: <input
+            {...filtredProps}
+            type="file"
+            name="files[]"
+            onChange={this.onChange}
+            onDrop={this.onDrop}
+        />
     }
 }

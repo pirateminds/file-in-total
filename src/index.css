@@ -1,5 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  overflow: hidden;
   font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
