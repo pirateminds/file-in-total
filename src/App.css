@@ -1,0 +1,51 @@
+.App {
+  text-align: center;
+  padding: 24px;
+}
+
+table {
+    text-align: left;
+    border-top: 1px solid #ddd;
+    width: 100%;
+}
+
+table td {
+    padding: 8px 16px;
+}
+
+table td + td {
+    background: #f1f1f1
+}
+
+.title {
+    margin: 32px 0;
+}
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.file-picker {
+    padding: 42px;
+    border: 2px solid black;
+}
